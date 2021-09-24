@@ -5,15 +5,120 @@
 .app {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 3fr;
   grid-template-areas:
     "profile stats"
     "profile stats";
+  width: 60%;
+  gap: 15px;
 }
 
 .card-profile {
   grid-area: profile;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "top"
+    "bottom";
+  background: $dark-blue;
+  border-radius: 10px;
+  &-top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-image: linear-gradient(
+      to bottom right,
+      $blue,
+      $desaturated-blue
+    );
+    border-radius: 10px;
+    color: white;
+    &-image {
+      img {
+        border: 3px solid white;
+        border-radius: 50%;
+      }
+    }
+    &-name {
+      h1 {
+        font-weight: 300;
+        font-size: 3rem;
+      }
+      span {
+        font-size: 1rem;
+        font-weight: 300;
+      }
+    }
+  }
+  &-bottom {
+    grid-area: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      margin: 0.4rem 0rem;
+      color: $desaturated-blue;
+    }
+  }
 }
+
 .stats {
   grid-area: stats;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "card card card"
+    "card card card";
+  gap: 15px;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "back"
+    "stats";
+
+  &-back {
+    grid-area: back;
+    background: transparent;
+  }
+  &-front {
+    background: $dark-blue;
+    color: white;
+    &-title {
+    }
+    &-hrs {
+    }
+    &-last {
+    }
+  }
+}
+
+#work {
+  background: $light-red;
+}
+#play {
+  background: $soft-blue;
+}
+#study {
+  background: $light-red2;
+}
+#exercise {
+  background: $lime-green;
+}
+#social {
+  background: $violet;
+}
+#self {
+  background: $soft-orange;
 }
