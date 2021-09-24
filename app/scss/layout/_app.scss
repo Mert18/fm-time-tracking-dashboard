@@ -1,0 +1,19 @@
+.container {
+  height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "profile stats"
+    "profile stats";
+}
+
+.card-profile {
+  grid-area: profile;
+}
+.stats {
+  grid-area: stats;
+}
